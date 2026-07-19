@@ -54,10 +54,10 @@ export function AttestationForm({ onSubmit }: AttestationFormProps) {
     }))
   }
 
-  const handleSelectChange = (value: string) => {
+  const handleSelectChange = (value: string | null) => {
     setFormData((prev) => ({
       ...prev,
-      organizationName: value,
+      organizationName: value ?? "",
     }))
     setTouched((prev) => ({
       ...prev,
@@ -124,7 +124,7 @@ export function AttestationForm({ onSubmit }: AttestationFormProps) {
   }) => (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger asChild>
+        <TooltipTrigger>
           <button
             type="button"
             className="inline-flex items-center ml-1.5 text-muted-foreground hover:text-foreground transition-colors"
