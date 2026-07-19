@@ -32,7 +32,7 @@ export default function BusinessVerificationForm() {
   const [submitted, setSubmitted] = useState(false);
   const [completionStep, setCompletionStep] = useState(0);
 
-  const handleTrackSelection = (track: 'trackA' | 'trackB') => {
+  const handleTrackSelection = (track: 'trackA' | 'trackB' | null) => {
     setSelectedTrack(track);
     setFormData({
       businessName: '',
@@ -46,7 +46,7 @@ export default function BusinessVerificationForm() {
     setCompletionStep(0);
   };
 
-  const handleInputChange = (field: keyof FormData, value: string) => {
+  const handleInputChange = (field: keyof FormData, value: string | null) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,

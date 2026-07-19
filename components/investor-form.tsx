@@ -25,7 +25,7 @@ export default function InvestorForm() {
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string | null) => {
     setFormData(prev => ({
       ...prev,
       [field]: value,
